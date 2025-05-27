@@ -77,6 +77,10 @@
                         mensaje.textContent= "Respuesta incorrecta"
                         mensaje.style.backgroundColor= "rgb(245, 89, 89)";
                     }
+                    inputOp= document.getElementsByName("respuesta");
+                    inputOp.forEach((radio) => {
+                        radio.disabled= true;
+                    })
                 })
 
                 label.appendChild(input);
