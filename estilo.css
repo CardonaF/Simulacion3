@@ -1,0 +1,72 @@
+body{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-image:url(/imagenes/ChatGPT\ Image\ 26\ may\ 2025\,\ 04_30_07\ p.m..png);
+}
+.container{
+    background-color: rgba(22, 79, 110, 0.6);
+    margin: 4%;
+    margin-top: 5%;
+    padding: 1px;
+    border-radius: 30px;
+    padding-bottom: 20px;
+
+}
+.container2{
+    background-color: rgb(188, 201, 213,0.9);
+    margin: 4%;
+    margin-top: 50px;
+    border-radius: 30px;
+}
+.container3{
+    background-color: rgba(22, 79, 110, 0.6);
+    margin: 4%;
+    margin-top: 5%;
+    padding: 1px;
+    border-radius: 30px;
+    padding-bottom: 20px;
+}
+h1{
+    background-color:    rgb(208, 131, 43);
+    border-radius: 30px;
+    margin: 50px;
+    padding: 10px;
+}
+h3{
+    background-color:    rgb(194, 186, 177);
+    border-radius: 30px;
+    margin: 50px;
+    padding: 5px;
+}
+h6{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.mensajes{
+    margin: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 30px;
+    padding: 10px;
+}
+.dadoB{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: aliceblue;
+    border-radius: 30px;
+    margin: 12px;
+    padding: 10px;
+    cursor: pointer;
+}
+.salir{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 30px;
+    padding: 15px;
+    cursor: pointer;
+}
+.continuar{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 30px;
+    padding: 15px;
+    cursor: pointer;
+    
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet", href="/css/estilo.css">
+    <title>Dados</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Preguntas y respuestas dados</h1>
+        <h3>Gira el dado y responde las preguntas</h3>
+        <div>
+            <img id="dadoimg" src="/imagenes/dadoimg1.png" alt="Imagen de dado">
+        </div>
+        <button class="dadoB" onclick="tirar()">Tirar</button>
+        
+        <div class="container2">
+            <p id="pregunta"></p>
+            <div id="opciones" class="opciones"></div>
+        </div>
+
+        <h6>Puedes tirar el dado las veces que gustes.</h6>
+
+    </div>
+    <div class="mensajes" id="mensaje"></div>
+    <button class="salir" onclick="salir()">Salir</button>
+
+    <script>
+        const preguntas = {
+            1:{
+                texto: "¿Que tipo de texto busca convencer al lector?", opciones:["Descriptivo","Narrativo", "Argumentativo", "Expositivo"], correcta: "Argumentativo"
+            },
+            2: {
+                texto: "¿Quien escribio 'la casa de Bernarda Alba'?", opciones:["Gabriel Garcia Marquez","Federico Garcia", "Pablo Neruda", "Octavio Paz"], correcta: "Federico Garcia"
+            },
+            3: {
+                texto: "¿Que es una analogia?", opciones:["Una contradicción de ideas","Una comparación entre dos relaciones", "Una exageración literaria", "Una oración interrogativa"], correcta: "Una comparación entre dos relaciones"
+            },
+            4: {
+                texto: "¿Cuál de las siguientes opciones es un ejemplo de lenguaje connotativo?", opciones:["El cielo está despejado","Juan mide 1.80 metros", "Tus ojos son dos luceros", "La temperatura es de 30 grados"], correcta: "Tus ojos son dos luceros"
+            },
+            5: {
+                texto: "¿La novela es un texto narrativo extenso que puede incluir varios personajes y tramas?", opciones:["Verdadero","Falso"], correcta: "Verdadero"
+            },
+            6: {
+                texto: "¿El lenguaje denotativo se utiliza en textos científicos y técnicos?", opciones:["Verdadero","Falso"], correcta: "Verdadero"
+            }
+        };
+
+        function tirar(){
+            const numero= Math.floor(Math.random() * 6)+1 ;
+            const imagen= document.getElementById("dadoimg");
+            const buena= document.getElementById("correcta");
+            const mensaje= document.getElementById("mensaje");
+
+            imagen.src= `/imagenes/dadoimg${numero}.png`;
+
+            const pregunta= document.getElementById("pregunta");
+            pregunta.innerText= preguntas[numero].texto;
+
+            const mostrarOp= document.getElementById("opciones");
+            mostrarOp.innerHTML= "";
+
+            preguntas[numero].opciones.forEach((opcion, index) => {
+                const label= document.createElement("label");
+                const input= document.createElement("input");
+                input.type= "radio";
+                input.name= "respuesta";
+                input.value= opcion;
+
+                input.addEventListener("change", () => {
+                    if(input.value=== preguntas[numero].correcta){
+                        mensaje.textContent= "Respuesta Correcta";
+                        mensaje.style.backgroundColor= "rgb(245, 242, 89)";
+                    }else{
+                        mensaje.textContent= "Respuesta incorrecta"
+                        mensaje.style.backgroundColor= "rgb(245, 89, 89)";
+                    }
+                })
+
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(opcion));
+                mostrarOp.appendChild(label);
+
+            });
+
+        }
+        let conMensaje= mensaje;
+        function salir(){
+            if(conMensaje.textContent=="Respuesta Correcta"){
+                window.location.href = 'index.html';
+            }else{
+                alert("Selecciona la respuesta correcta para continuar");
+            }
+        }
+    </script>
+</body>
+</html>   
