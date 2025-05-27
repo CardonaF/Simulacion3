@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet", href="/css/estilo.css">
+    <link rel="stylesheet", href="estilo.css">
     <title>Dados</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
         <h1>Preguntas y respuestas dados</h1>
         <h3>Gira el dado y responde las preguntas</h3>
         <div>
-            <img id="dadoimg" src="/imagenes/dadoimg1.png" alt="Imagen de dado">
+            <img id="dadoimg" src="dadoimg1.png" alt="Imagen de dado">
         </div>
         <button class="dadoB" onclick="tirar()">Tirar</button>
         
@@ -54,7 +54,7 @@
             const buena= document.getElementById("correcta");
             const mensaje= document.getElementById("mensaje");
 
-            imagen.src= `/imagenes/dadoimg${numero}.png`;
+            imagen.src= `dadoimg${numero}.png`;
 
             const pregunta= document.getElementById("pregunta");
             pregunta.innerText= preguntas[numero].texto;
